@@ -53,4 +53,6 @@ def redirect_to_url(short_code):
         abort(404) # 404 Not Found status code
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
